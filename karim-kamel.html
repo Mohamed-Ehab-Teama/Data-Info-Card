@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng. Karim Kamel - Business Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .business-card {
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .left-section {
+            flex: 1;
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .left-section::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -100px;
+        }
+
+        .left-section::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -150px;
+            left: -100px;
+        }
+
+        .curve-decoration {
+            position: absolute;
+            right: -50px;
+            top: 0;
+            bottom: 0;
+            width: 150px;
+            background: white;
+            border-radius: 50% 0 0 50%;
+            opacity: 0.1;
+        }
+
+        .name-title {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 40px;
+        }
+
+        .name {
+            color: white;
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            line-height: 1.2;
+        }
+
+        .profession {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1em;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            display: inline-block;
+        }
+
+        .contact-items {
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .icon-box {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .icon-box svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        .contact-details {
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        .right-section {
+            flex: 1;
+            background: white;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .logo-area {
+            text-align: center;
+            width: 100%;
+        }
+
+        .logo-box {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(220, 53, 69, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-box::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .logo-text {
+            font-size: 72px;
+            font-weight: bold;
+            color: white;
+            font-family: 'Georgia', serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .company-info {
+            text-align: center;
+        }
+
+        .company-name {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company-name .highlight {
+            color: #dc3545;
+        }
+
+        .tagline {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+
+        .qr-area {
+            text-align: center;
+        }
+
+        .qr-box {
+            width: 140px;
+            height: 140px;
+            border: 3px solid #dc3545;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            background: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-box::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #dc3545;
+            border-right: none;
+            border-bottom: none;
+            top: 10px;
+            left: 10px;
+        }
+
+        .qr-box::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #dc3545;
+            border-left: none;
+            border-top: none;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .qr-placeholder {
+            color: #dc3545;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .scan-text {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+
+        @media (max-width: 900px) {
+            .business-card {
+                flex-direction: column;
+                height: auto;
+                max-width: 500px;
+            }
+
+            .left-section,
+            .right-section {
+                padding: 40px 30px;
+            }
+
+            .name {
+                font-size: 1.8em;
+            }
+
+            .curve-decoration {
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .name {
+                font-size: 1.5em;
+            }
+
+            .contact-details {
+                font-size: 0.85em;
+            }
+
+            .logo-box,
+            .qr-box {
+                width: 120px;
+                height: 120px;
+            }
+
+            .logo-text {
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="business-card">
+        <!-- Left Section - Contact Info -->
+        <div class="left-section">
+            <div class="curve-decoration"></div>
+
+            <div class="name-title">
+                <h1 class="name">ENG. KARIM KAMEL</h1>
+                <p class="profession">Manager of Technical Assistance Department</p>
+            </div>
+
+            <div class="contact-items">
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                    </div>
+                    <div class="contact-details">
+                        <a href="tel:+201148881167">+20 11 4888 1167</a><br>
+                        <a href="tel:+201148881167">+20 10 4455 5588</a><br>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                    </div>
+                    <div class="contact-details">
+                        <a href="tel:+20383317163">+2038331763</a> -
+                        <a href="tel:+20383317163">38335472</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                    </div>
+                    <div class="contact-details">
+                        <a href="mailto:k.kamel_veneda@hotmail.com">k.kamel_veneda@hotmail.com</a><br>
+                        <a href="https://www.ceramicavenice.eg.com" target="_blank">www.ceramicavenice.eg.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                    </div>
+                    <div class="contact-details">
+                        <a href="https://www.linkedin.com/in/karim-kamel-333166109?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                            target="_blank">
+                            <b><u><i>Linked In</i></u></b>
+                        </a><br>
+                        <a href="https://www.ceramicavenice.eg.com" target="_blank">www.ceramicavenice.eg.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="icon-box">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                    </div>
+                    <div class="contact-details">
+                        9 October City<br>
+                        Industrial Zone 4
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section - Logo & QR -->
+        <div class="right-section">
+            <div class="logo-area">
+                <div class="logo-box">
+                    <div class="logo-text">V</div>
+                </div>
+                <div class="company-info">
+                    <div class="company-name">CERAMICA <span class="highlight">VENICE</span></div>
+                    <div class="tagline">GENEVA</div>
+                </div>
+            </div>
+
+            <div class="qr-area">
+                <div class="qr-box">
+                    <div class="qr-placeholder">QR CODE</div>
+                </div>
+                <p class="scan-text">Scan to save contact</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
